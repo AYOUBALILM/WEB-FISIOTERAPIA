@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import { Reveal } from "@/components/reveal";
 import { team } from "@/lib/content";
 import { contact } from "@/lib/config";

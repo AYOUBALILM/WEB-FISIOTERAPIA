@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin, Phone, MessageCircle } from "lucide-react";
 import { business } from "@/lib/content";
