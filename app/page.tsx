@@ -1,103 +1,125 @@
-import Image from "next/image";
+import { HeroPlaceholder } from "@/components/hero-placeholder";
+import { Separator } from "@/components/ui/separator";
+import { business, problems } from "@/lib/content";
+import { contact } from "@/lib/config";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <HeroPlaceholder />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Problems teaser — SKILL 31 user journey */}
+      <section
+        id="tratamientos"
+        className="mx-auto max-w-[1280px] px-6 lg:px-8 py-12 lg:py-16"
+        aria-labelledby="problems-heading"
+      >
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Motivos frecuentes
+            </p>
+            <h2
+              id="problems-heading"
+              className="mt-2 font-serif text-[28px] font-[380] leading-none tracking-[-0.02em] lg:text-[32px]"
+            >
+              ¿Qué te ocurre?
+            </h2>
+          </div>
+          <p className="max-w-[44ch] text-[14px] leading-6 text-muted-foreground">
+            Elige lo que más se acerca a tu caso. Si no lo tienes claro,
+            cuéntanos por teléfono y te orientamos sin compromiso.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {problems.map((p) => (
+            <Link
+              key={p.id}
+              href={p.href}
+              className="group relative flex flex-col justify-between rounded-[16px] border border-border bg-card p-5 transition-all duration-200 hover:border-primary/15 hover:bg-accent/40 hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+            >
+              <span className="text-[13px] font-medium tracking-tight text-foreground group-hover:text-primary transition-colors">
+                {p.label}
+              </span>
+              <span className="mt-2 text-[13px] leading-5 text-muted-foreground">
+                {p.description}
+              </span>
+              <span className="mt-4 inline-flex text-[12px] font-medium tracking-wide text-muted-foreground group-hover:text-foreground transition-colors">
+                Saber más →
+              </span>
+              {p.highlight && (
+                <span className="absolute right-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary-foreground">
+                  Te orientamos
+                </span>
+              )}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Separator className="mx-auto max-w-[1280px]" />
+
+      {/* Contact tease + fase placeholder */}
+      <section
+        id="contacto"
+        className="mx-auto max-w-[1280px] px-6 lg:px-8 py-12 lg:py-16"
+      >
+        <div className="grid gap-8 rounded-[20px] border border-border bg-secondary/30 p-6 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
+          <div>
+            <h2 className="font-serif text-[24px] font-[380] tracking-tight lg:text-[28px]">
+              Cuéntanos qué te ocurre.
+            </h2>
+            <p className="mt-3 max-w-[52ch] text-[14.5px] leading-6 text-muted-foreground">
+              {business.longDescription}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={contact.phone.href}
+                className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-[14px] font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Pedir cita — {contact.phone.display}
+              </a>
+              <a
+                href={contact.whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-[14px] font-medium hover:bg-accent transition-colors"
+              >
+                Escribir por WhatsApp
+              </a>
+            </div>
+            <p className="mt-4 text-[12px] leading-4 text-muted-foreground">
+              Av. de Logroño, 38 — Casetas ·{" "}
+              <span className="font-medium text-foreground">[VERIFICAR CON ANA] horario</span>
+            </p>
+          </div>
+
+          <div className="rounded-[16px] border border-border bg-background p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+              Fase 1 — placeholder
+            </p>
+            <p className="mt-2 font-serif text-[16px] leading-6">
+              En Fase 5 aquí vivirá el flujo “No sé qué necesito” con preguntas
+              suaves y envío a WhatsApp/teléfono — sin diagnósticos automáticos.
+            </p>
+            <ul className="mt-4 list-disc space-y-1 pl-4 text-[13px] leading-5 text-muted-foreground">
+              <li>¿Dónde tienes la molestia?</li>
+              <li>¿Desde cuándo?</li>
+              <li>¿Te limita en alguna actividad?</li>
+              <li>Déjanos tu teléfono y te llamamos.</li>
+            </ul>
+            <p className="mt-4 text-[12px] font-medium text-muted-foreground">
+              SKILL 9 — canal de contacto, no diagnóstico.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-8 text-center text-[11px] tracking-wide text-muted-foreground">
+          FASE 1 · Diseño base operativo · Siguiente: Hero editorial premium + motion sutil (FASE 2)
+        </p>
+      </section>
+    </>
   );
 }
