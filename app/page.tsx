@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero";
-import { Treatments } from "@/components/treatments";
-import { Team } from "@/components/team";
+import { Fisioterapia } from "@/components/fisioterapia";
+import { Pilates } from "@/components/pilates";
+import { Ana } from "@/components/ana";
 import { Testimonials } from "@/components/testimonials";
 import { Clinic } from "@/components/clinic";
 import { PilatesHorarios } from "@/components/pilates-horarios";
@@ -12,11 +13,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Treatments />
-      <PilatesHorarios />
-      <Team />
+      <Fisioterapia />
+      <Pilates />
+      <Ana />
       <Testimonials />
       <Clinic />
+      <PilatesHorarios />
       <Booking />
       <Location />
       <FAQ />

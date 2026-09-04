@@ -15,9 +15,11 @@ export const business = {
 };
 
 export const navLinks = [
-  { label: "Tratamientos", href: "#tratamientos" },
+  { label: "Fisioterapia", href: "#fisioterapia" },
+  { label: "Pilates", href: "#pilates" },
+  { label: "Sobre Ana", href: "#ana" },
   { label: "Centro", href: "#centro" },
-  { label: "Reseñas", href: "#resenas" },
+  { label: "Opiniones", href: "#resenas" },
   { label: "Contacto", href: "#contacto" },
 ] as const;
 
