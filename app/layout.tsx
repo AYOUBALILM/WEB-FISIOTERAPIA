@@ -3,6 +3,7 @@ import { Geist, Newsreader } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { MobileCTA } from "@/components/mobile-cta";
+import { Footer } from "@/components/footer";
 import { siteConfig, contact } from "@/lib/config";
 import { business, seoKeywords } from "@/lib/content";
 
@@ -72,7 +73,6 @@ export const metadata: Metadata = {
     },
   },
   category: "health",
-  // verification placeholders — no añadir IDs vacíos
 };
 
 export const viewport: Viewport = {
@@ -86,7 +86,6 @@ function LocalBusinessJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    // Subtype más específico cuando esté verificado
     name: business.name,
     description: business.description,
     url: siteConfig.domain,
@@ -106,7 +105,7 @@ function LocalBusinessJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 41.715, // [VERIFICAR CON ANA] — coordenadas exactas
+      latitude: 41.715, // [VERIFICAR CON ANA]
       longitude: -1.03,
     },
     openingHours: "[VERIFICAR CON ANA]",
@@ -132,46 +131,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${newsreader.variable} ${geistMono.variable} antialiased`}
       >
         <LocalBusinessJsonLd />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-[100] bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm"
+        >
+          Saltar al contenido
+        </a>
         <Navbar />
         <main id="main" className="pb-[76px] lg:pb-0">
           {children}
         </main>
         <MobileCTA />
-
-        {/* Footer minimal Fase 1 — se expandirá en Fase 6 */}
-        <footer className="border-t border-border bg-secondary/40">
-          <div className="mx-auto max-w-[1280px] px-6 lg:px-8 py-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-              <div>
-                <p className="font-serif text-[15px] font-medium tracking-tight">
-                  {business.name}
-                </p>
-                <p className="mt-1 text-[13px] leading-5 text-muted-foreground">
-                  {contact.address.full}
-                  <br />
-                  <a href={contact.phone.href} className="hover:text-foreground underline underline-offset-4">
-                    {contact.phone.display}
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href={contact.whatsapp.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-foreground underline underline-offset-4"
-                  >
-                    WhatsApp
-                  </a>
-                </p>
-              </div>
-              <p className="text-[11px] leading-5 tracking-wide text-muted-foreground max-w-[48ch]">
-                Información orientativa. No realizamos diagnósticos por la web.
-                Para valoración individual, pide cita por teléfono o WhatsApp.
-                <br />
-                © {new Date().getFullYear()} {business.name} — Casetas, Zaragoza.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
