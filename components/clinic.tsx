@@ -5,40 +5,40 @@ import { Reveal } from "@/components/reveal";
 
 const gallery = [
   {
+    src: "/images/clinic/recepcion-real.jpg",
+    fallback: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
+    alt: "Recepción y sala de espera — Ana Seva",
+    label: "Recepción",
+  },
+  {
+    src: "/images/clinic/salas/sala-1-real.jpg",
+    fallback: "https://images.unsplash.com/photo-1522770179533-24471fcdba45?q=80&w=800&auto=format&fit=crop",
+    alt: "Sala de Tratamiento 1",
+    label: "Tratamiento 1",
+  },
+  {
+    src: "/images/clinic/collage-5-espacios.jpg",
+    fallback: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
+    alt: "Collage 5 espacios — recepción, pilates, cabina, gabinete, baño",
+    label: "Espacios",
+  },
+  {
+    src: "/images/clinic/horarios-730-2100.jpg",
+    fallback: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop",
+    alt: "Horarios 7:30–21:00 incluido mediodía",
+    label: "Horarios",
+  },
+  {
     src: "/images/clinic/salas/sala-2.jpg",
     fallback: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
-    alt: "Sala de Tratamiento 2 — camilla, logo Ana Seva, luz cálida",
+    alt: "Sala de Tratamiento 2",
     label: "Tratamiento 2",
   },
   {
     src: "/images/clinic/salas/sala-3-presoterapia.jpg",
     fallback: "https://images.unsplash.com/photo-1570172619644-dfd03edfa798?q=80&w=800&auto=format&fit=crop",
-    alt: "Sala 3 Presoterapia — camilla azul",
+    alt: "Sala 3 Presoterapia",
     label: "Presoterapia",
-  },
-  {
-    src: "/images/clinic/exterior-noche.jpg",
-    fallback: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop",
-    alt: "Fachada noche — Centro de Fisioterapia Ana Seva, Calle Huesca",
-    label: "Fachada",
-  },
-  {
-    src: "/images/clinic/sala-tratamiento-1.jpg",
-    fallback: "https://images.unsplash.com/photo-1522770179533-24471fcdba45?q=80&w=800&auto=format&fit=crop",
-    alt: "Sala Tratamiento 1 — camilla beige, vitrina",
-    label: "Tratamiento 1",
-  },
-  {
-    src: "/images/pilates/sala-multifuncional.jpg",
-    fallback: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=800&auto=format&fit=crop",
-    alt: "Sala Multifuncional Pilates — esterillas, TRX, pelotas",
-    label: "Pilates",
-  },
-  {
-    src: "/images/clinic/bano-accesible.jpg",
-    fallback: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-    alt: "Baño accesible — seguro y acogedor",
-    label: "Accesible",
   },
 ];
 
