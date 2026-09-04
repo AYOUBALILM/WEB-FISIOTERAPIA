@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
+/*
+  ANA SEVA — Premium Editorial Warm System
+  Inspiración: Aesop / Aman / Apple / arquitectura minimal
+  Paleta cálida, no hospitalaria. Base oklch.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm white — no pure white, editorial */
+  --background: oklch(0.99 0.008 90);
+  --foreground: oklch(0.20 0.02 155);
+
+  --card: oklch(0.99 0.008 90);
+  --card-foreground: oklch(0.20 0.02 155);
+
+  --popover: oklch(0.99 0.008 90);
+  --popover-foreground: oklch(0.20 0.02 155);
+
+  /* Deep forest — confianza, sin azul clínico */
+  --primary: oklch(0.27 0.035 155);
+  --primary-foreground: oklch(0.99 0.008 90);
+
+  /* Stone 50 — superficies secundarias */
+  --secondary: oklch(0.96 0.01 85);
+  --secondary-foreground: oklch(0.27 0.035 155);
+
+  --muted: oklch(0.96 0.01 85);
+  --muted-foreground: oklch(0.52 0.015 85);
+
+  --accent: oklch(0.94 0.015 85);
+  --accent-foreground: oklch(0.27 0.035 155);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0.008 90);
+
+  --border: oklch(0.91 0.01 85);
+  --input: oklch(0.91 0.01 85);
+  --ring: oklch(0.27 0.035 155);
+
+  --radius: 0.75rem;
+
+  /* Warm stone for subtle washes */
+  --warm: oklch(0.97 0.012 85);
+  --stone: oklch(0.88 0.012 85);
+  --warm-foreground: oklch(0.27 0.035 155);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-warm: var(--warm);
+  --color-stone: var(--stone);
+
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-newsreader);
   --font-mono: var(--font-geist-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --breakpoint-3xl: 120rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground font-sans leading-relaxed;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Editorial headings — serif, tight, elegant */
+  h1,
+  h2,
+  h3 {
+    @apply font-serif tracking-tight text-balance;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  /* Selection warm */
+  ::selection {
+    background: oklch(0.94 0.015 85);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible premium */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Scrollbar subtle — no dark theme needed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.88 0.012 85);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
