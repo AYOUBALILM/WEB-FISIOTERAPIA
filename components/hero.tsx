@@ -92,13 +92,17 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
             className="relative"
           >
-            <div className="relative aspect-[4/3.1] overflow-hidden rounded-[24px] border border-border bg-secondary lg:aspect-[4/3.4]">
+            <div className="relative aspect-[4/3.1] overflow-hidden rounded-[24px] border border-border bg-secondary lg:aspect-[4/3.4] group">
               <img
-                src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1200&auto=format&fit=crop"
-                alt="Terapia manual elegante — manos de fisioterapeuta en tratamiento con luz cálida, representando la fisioterapia cercana de Ana Seva"
-                className="h-full w-full object-cover"
+                src="/images/hero/hero-pilates-panoramica.jpg"
+                alt="Sala pilates panorámica Ana Seva — madera clara, bolas y TRX, luz natural"
+                className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s] ease-out"
                 loading="eager"
                 decoding="async"
+                onError={(e) => {
+                  const t = e.currentTarget as HTMLImageElement;
+                  t.src = "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1200&auto=format&fit=crop";
+                }}
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-4 flex items-end justify-between">

@@ -1,3 +1,5 @@
+"use client";
+
 import { contact, siteConfig } from "@/lib/config";
 import { business, navLinks } from "@/lib/content";
 import { Separator } from "@/components/ui/separator";
@@ -9,7 +11,15 @@ export function Footer() {
         <div className="grid gap-8 lg:grid-cols-[1.4fr_0.7fr_0.7fr]">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-[8px] bg-primary text-primary-foreground text-[11px] font-semibold">AS</span>
+              <img
+                src="/images/logo/ana-seva.png"
+                alt="Ana Seva"
+                className="h-7 w-auto"
+                onError={(e) => {
+                  const t = e.currentTarget as HTMLImageElement;
+                  t.style.display = "none";
+                }}
+              />
               <span className="font-serif text-[14px] font-[550]">{business.name}</span>
             </div>
             <p className="mt-3 max-w-[44ch] text-[13px] leading-5 text-muted-foreground">{business.longDescription}</p>

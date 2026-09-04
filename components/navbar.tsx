@@ -41,13 +41,24 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
           <div className="flex h-[64px] items-center justify-between gap-6 lg:h-[72px]">
-            {/* Brand — editorial, no logo genérico */}
+            {/* Brand — logo real teal */}
             <Link
               href="/"
               className="group flex items-center gap-3 shrink-0"
               aria-label="Centro de Fisioterapia Ana Seva - Inicio"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-primary text-primary-foreground text-[11px] font-semibold tracking-widest">
+              <img
+                src="/images/logo/ana-seva.png"
+                alt="Ana Seva — Centro de Fisioterapia"
+                className="h-9 w-auto object-contain"
+                onError={(e) => {
+                  const t = e.currentTarget as HTMLImageElement;
+                  t.style.display = "none";
+                  const fallback = t.nextElementSibling as HTMLElement | null;
+                  if (fallback) fallback.style.display = "flex";
+                }}
+              />
+              <span className="hidden h-8 w-8 items-center justify-center rounded-[8px] bg-primary text-primary-foreground text-[11px] font-semibold tracking-widest">
                 AS
               </span>
               <span className="hidden sm:flex flex-col items-start leading-none">
@@ -57,9 +68,6 @@ export function Navbar() {
                 <span className="text-[11px] tracking-[0.12em] uppercase text-muted-foreground font-medium">
                   Fisioterapia — Casetas
                 </span>
-              </span>
-              <span className="sm:hidden font-serif text-[15px] font-[550] tracking-tight">
-                Ana Seva
               </span>
             </Link>
 
