@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Centro de Fisioterapia Ana Seva
 
-## Getting Started
+Web premium — Av. de Logroño, 38 — Casetas, Zaragoza — 976 97 98 58
 
-First, run the development server:
+Stack: Next 15 · App Router · TypeScript · Tailwind 4 · Motion · Radix · Lucide
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Estructura
+
+```
+app/
+  layout.tsx (SEO + LocalBusiness JSON-LD + fonts Geist + Newsreader)
+  page.tsx
+  sitemap.ts / robots.ts / manifest.ts
+components/
+  navbar/  hero/  mobile-cta/  ui/
+lib/
+  content.ts  (única fuente editable)
+  config.ts   (contacto, maps)
+  utils.ts
+public/images/{hero,team,clinic,treatments}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # verificar antes de push
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contenido editable
 
-## Learn More
+Toda la info en `lib/content.ts` — ver `[VERIFICAR CON ANA]` para datos pendientes.
+Contacto centralizado en `lib/config.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+Nunca inventar tratamientos, horarios, precios ni reseñas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Preparado para Netlify con `netlify.toml` (Next Runtime).
+Conectar repo GitHub en app.netlify.com → deploy automático en cada push.
 
-## Deploy on Vercel
+## Fases
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [x] FASE 1: arquitectura + design system + navbar + mobile-cta
+- [ ] FASE 2: Hero editorial
+- [ ] FASE 3: Tratamientos
+- [ ] FASE 4: Equipo + reseñas
+- [ ] FASE 5: Booking / No sé qué necesito
+- [ ] FASE 6: SEO
+- [ ] FASE 7: Mobile QA
+- [ ] FASE 8: Performance + A11y
+- [ ] FASE 9: QA visual
+- [ ] FASE 10: Netlify deploy

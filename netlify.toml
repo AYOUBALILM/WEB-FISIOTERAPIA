@@ -1,0 +1,32 @@
+# Netlify — SKILL 25/26
+# Deploy automático: GitHub push → Netlify build
+# Requiere conectar repo GitHub en app.netlify.com y seleccionar este directorio
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[[plugins]]
+  # Necesario para Next.js en Netlify — se instala automático al conectar
+  package = "@netlify/plugin-nextjs"
+
+# Redirects — SPA fallback limpio (Next ya maneja, pero útil para _next/static)
+[[redirects]]
+  from = "/api/*"
+  to = "/api/:splat"
+  status = 200
+
+# Headers — cache estático
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
