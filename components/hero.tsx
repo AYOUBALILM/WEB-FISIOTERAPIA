@@ -90,8 +90,8 @@ export function Hero() {
           >
             <div className="relative aspect-[4/3.1] overflow-hidden rounded-[24px] border border-border bg-secondary lg:aspect-[4/3.4]">
               <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop"
-                alt="Sala luminosa del centro de fisioterapia en Casetas"
+                src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1200&auto=format&fit=crop"
+                alt="Terapia manual elegante — manos de fisioterapeuta en tratamiento con luz cálida, representando la fisioterapia cercana de Ana Seva"
                 className="h-full w-full object-cover"
                 loading="eager"
                 decoding="async"
