@@ -4,8 +4,9 @@ import { siteConfig } from "@/lib/config";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.domain;
 
-  // Fase 1: solo home. Fase 7 expandirá con /fisioterapia-casetas etc. (SKILL 12)
-  return [
+  // SKILL 12 — Arquitectura preparada para páginas SEO futuras
+  // Cuando se creen /fisioterapia-casetas, /pilates-casetas, etc., añadir aquí
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: base,
       lastModified: new Date(),
@@ -19,10 +20,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${base}/#centro`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/#contacto`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
   ];
+
+  // Futuras (comentadas hasta tener contenido real verificado):
+  // { url: `${base}/fisioterapia-casetas`, priority: 0.9 },
+  // { url: `${base}/fisioterapeuta-casetas`, priority: 0.9 },
+  // { url: `${base}/pilates-casetas`, priority: 0.8 },
+  // { url: `${base}/fisioterapia-utebo`, priority: 0.7 },
+
+  return staticPages;
 }
