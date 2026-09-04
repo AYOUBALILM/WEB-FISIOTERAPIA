@@ -93,8 +93,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-background text-foreground font-sans leading-relaxed;
+    @apply bg-background text-foreground font-sans leading-relaxed text-[16px];
     text-rendering: optimizeLegibility;
+  }
+  p, li, a {
+    font-size: 1em;
   }
 
   /* Editorial headings — serif, tight, elegant */

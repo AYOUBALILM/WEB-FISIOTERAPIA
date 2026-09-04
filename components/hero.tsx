@@ -44,7 +44,7 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="mt-5 max-w-[48ch] text-[15.5px] leading-[1.7] text-muted-foreground">
+            <p className="mt-5 max-w-[48ch] text-[17px] leading-[1.65] text-muted-foreground lg:text-[18px]">
               {business.description}
             </p>
 
@@ -111,17 +111,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.6 }}
-          className="grid gap-4 border-t border-border py-6 lg:grid-cols-3 lg:py-6"
-        >
-          <p className="font-serif text-[14px] leading-6 lg:col-span-1">Valoración individual y trato humano.</p>
-          <p className="text-[13px] leading-6 text-muted-foreground lg:col-span-2">
-            Plan adaptado a tu momento. Seguimiento claro, sin tecnicismos.
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );
