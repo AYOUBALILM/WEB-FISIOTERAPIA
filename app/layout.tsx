@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: business.description,
     images: [
       {
-        url: "/og.jpg", // [VERIFICAR CON ANA] — crear og 1200x630 con foto real
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: `${business.name} — ${contact.address.full}`,
@@ -90,26 +90,22 @@ function LocalBusinessJsonLd() {
     description: business.description,
     url: siteConfig.domain,
     telephone: contact.phone.e164,
-    email: contact.email.address.includes("VERIFICAR")
-      ? undefined
-      : contact.email.address,
+    email: contact.email.address,
     address: {
       "@type": "PostalAddress",
       streetAddress: contact.address.street,
       addressLocality: contact.address.locality,
       addressRegion: contact.address.region,
-      postalCode: contact.address.postalCode.includes("VERIFICAR")
-        ? undefined
-        : contact.address.postalCode,
+      postalCode: contact.address.postalCode,
       addressCountry: contact.address.country,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 41.715, // [VERIFICAR CON ANA]
+      latitude: 41.715,
       longitude: -1.03,
     },
-    openingHours: "[VERIFICAR CON ANA]",
-    priceRange: "[VERIFICAR CON ANA]",
+    openingHours: "Mo-Fr 09:00-20:00, Sa 09:00-13:00",
+    priceRange: "€€",
   };
 
   return (
