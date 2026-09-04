@@ -6,33 +6,19 @@ import { Reveal } from "@/components/reveal";
 export function PilatesHorarios() {
   return (
     <section id="horarios" className="mx-auto max-w-[1280px] px-6 lg:px-8 py-12 lg:py-16">
-      <Reveal>
-        <div className="text-center max-w-[640px] mx-auto">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-teal">Horarios</p>
-          <h2 className="mt-2 font-serif text-[28px] font-[380] leading-none lg:text-[34px]">
-            Pilates — <span className="italic text-teal">grupos reducidos</span>
-          </h2>
-          <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
-            Lunes a jueves mañana y tarde, viernes tarde. Sala multifuncional luminosa.
-          </p>
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.08} className="mt-8">
-        <div className="relative overflow-hidden rounded-[20px] border border-border bg-card shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
-          {/* Imagen real del horario — colócala en public/images/pilates/horarios-pilates.jpg */}
+      <Reveal delay={0.08}>
+        <div className="relative overflow-hidden rounded-[24px] border border-border shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
           <img
             src="/images/pilates/horarios-pilates.jpg"
-            alt="Horarios clases de Pilates — lunes a viernes, grupos reducidos"
-            className="w-full h-auto object-contain"
+            alt="Horarios clases de Pilates con fondo sala multifuncional"
+            className="w-full h-auto object-cover"
             loading="lazy"
+            onError={(e) => {
+              const t = e.currentTarget as HTMLImageElement;
+              t.src = "/images/clinic/collage-5-espacios.jpg";
+            }}
           />
-          {/* Fallback si aún no está la imagen local — muestra stock temporal con animación sutil */}
-          <div className="absolute inset-0 pointer-events-none border border-border rounded-[20px]" aria-hidden />
         </div>
-        <p className="mt-3 text-center text-[12px] text-muted-foreground">
-          Imagen real del centro — si no la ves, copia el archivo a <code className="bg-secondary px-1 rounded">public/images/pilates/horarios-pilates.jpg</code>
-        </p>
       </Reveal>
 
       {/* Detalle animado sutil — puntos teal flotantes */}
