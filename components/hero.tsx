@@ -31,13 +31,17 @@ export function Hero() {
 
             <h1
               id="hero-heading"
-              className="mt-5 font-serif text-[42px] font-[380] leading-[0.9] tracking-[-0.035em] text-foreground sm:text-[50px] lg:text-[58px]"
+              className="mt-5 font-serif leading-[0.82] tracking-[-0.04em] text-foreground"
             >
-              Fisioterapia
-              <br />
-              <span className="italic font-[380] text-muted-foreground/90">cercana,</span> para
-              <br />
-              moverte mejor.
+              <span className="block text-[52px] font-[650] tracking-[-0.05em] sm:text-[62px] lg:text-[74px] xl:text-[82px]">
+                ANA SEVA
+              </span>
+              <span className="block mt-1 text-[34px] font-[350] tracking-[-0.03em] sm:text-[42px] lg:text-[52px] xl:text-[56px] text-foreground">
+                Fisioterapia
+              </span>
+              <span className="block text-[34px] font-[350] italic tracking-[-0.03em] sm:text-[42px] lg:text-[52px] xl:text-[56px] text-muted-foreground">
+                cercana
+              </span>
             </h1>
 
             <p className="mt-5 max-w-[48ch] text-[15.5px] leading-[1.7] text-muted-foreground">
